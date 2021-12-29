@@ -14,16 +14,17 @@ export default function Board() {
         justifyContent: "space-between",
         alignItems: "center",
       }}
-      
     >
-      <div  style={gridStyling}>
+      <div
+        style={gridStyling}
+        onMouseOver={(e) => {
+          if (e.buttons !== 1) return;
+        setSingleSquare(coors(i), activate(s));
+        }}
+      >
         {squares.map((s, i) => (
           <Square
             key={i}
-            handleMouseOver={(e) => {
-              if (e.buttons) setSingleSquare(coors(i), activate(s));
-            }}
-            handleClick={(_) => setSingleSquare(coors(i), activate(s))}
             coordinates={coors(i)}
             color={color(s)}
           />
