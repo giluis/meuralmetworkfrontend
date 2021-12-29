@@ -3,8 +3,6 @@ export default function Square({ handleMouseOver, color }) {
   const paddedSize = 17;
   return (
     <div
-
-
       style={{ height: SQUARE_SIZE, width: SQUARE_SIZE }}
       onMouseOver={handleMouseOver}
     >

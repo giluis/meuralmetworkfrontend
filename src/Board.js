@@ -15,16 +15,14 @@ export default function Board() {
         alignItems: "center",
       }}
     >
-      <div
-        style={gridStyling}
-        onMouseOver={(e) => {
-          if (e.buttons !== 1) return;
-        setSingleSquare(coors(i), activate(s));
-        }}
-      >
+      <div style={gridStyling}>
         {squares.map((s, i) => (
           <Square
             key={i}
+            handleMouseOver={(e) => {
+              if (e.buttons !== 1) return;
+              setSingleSquare(coors(i), activate(s));
+            }}
             coordinates={coors(i)}
             color={color(s)}
           />
